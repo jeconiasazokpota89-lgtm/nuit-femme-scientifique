@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuit de la femme scientifique</title>
+    <style>
+        :root {
+            --brand-dark: #8B0000;
+            --brand-medium: #DC143C;
+            --brand-light: #f4f4f4;
+            --background: #f3f0ee;
+            --surface: #ffffff;
+            --text: #2d2d2d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(180deg, var(--brand-dark), var(--brand-medium));
+            color: #fff;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        header h3 {
+            margin: 0.75rem 0 0;
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--brand-medium);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.9rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.85rem 1rem;
+            border-radius: 0.85rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.12);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 4rem;
+        }
+
+        section {
+            background: var(--surface);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 1rem;
+            box-shadow: 0 18px 32px rgba(26, 24, 24, 0.05);
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: var(--brand-dark);
+            border-bottom: 3px solid var(--brand-medium);
+            padding-bottom: 0.75rem;
+        }
+
+        section h3 {
+            margin-top: 1rem;
+            color: var(--brand-dark);
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .event-grid img {
+            width: 100%;
+            height: auto;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background: #f8f3f0;
+            padding: 1rem;
+            border-left: 5px solid var(--brand-medium);
+            border-radius: 0.85rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .info-card h3 {
+            margin: 0;
+            min-width: 110px;
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        ul li {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 0.85rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.85rem;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background: var(--brand-medium);
+            color: #fff;
+            border: none;
+            padding: 1rem 1.3rem;
+            border-radius: 0.85rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.05);
+        }
+
+        footer {
+            background: #232323;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 1rem 1rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 640px) {
+            nav a {
+                padding: 0.75rem 0.85rem;
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 1.25rem;
+            }
+
+            .info-card {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>La Nuit de la femme scientifique</h1>
+        <h3>« La femme au coeur de la science »</h3>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#accueil">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="#programmes">Programme</a>
+            <a href="#inscription">Inscription</a>
+            <a href="#contacts">Contacts</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="accueil">
+            <h2>Accueil</h2>
+            <p>Célébrons l'excellence féminine dans la science en mettant en lumière les contributions des chercheuses, ingénieures et innovatrices qui transforment notre avenir.</p>
+
+            <div class="event-grid">
+                <img src="photo1.jpg" alt="Femme scientifique en laboratoire">
+                <img src="photo2.jpg" alt="Femme en recherche scientifique">
+                <img src="photo3.jpg" alt="Femme en recherche scientifique">
+            </div>
+
+            <h3>Informations clés</h3>
+            <div class="info-list">
+                <div class="info-card">
+                    <h3>📅 Date</h3>
+                    <p>11 février 2026</p>
+                </div>
+                <div class="info-card">
+                    <h3>⏰ Heure</h3>
+                    <p>19H00</p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Lieu</h3>
+                    <p>INSTI / Lokossa</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎓 Public</h3>
+                    <p>Élèves, étudiants, enseignants, grand public</p>
+                </div>
+                <div class="info-card">
+                    <h3>🔹 Rôle</h3>
+                    <p>Attirer l'attention et donner immédiatement le contexte.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="apropos">
+            <h2>À propos</h2>
+            <p>La Nuit de la Femme Scientifique met en lumière les contributions des femmes dans les sciences, brise les stéréotypes et promeut l'égalité des chances dans l'éducation scientifique.</p>
+            <h3>Objectifs affichés</h3>
+            <ul>
+                <li>Valoriser les femmes scientifiques</li>
+                <li>Encourager les jeunes filles à s'orienter vers les sciences</li>
+                <li>Sensibiliser la société à l'égalité dans le savoir</li>
+            </ul>
+        </section>
+
+        <section id="programmes">
+            <h2>Programme</h2>
+            <p>Découvrez les temps forts de la soirée.</p>
+            <ul>
+                <li>🎤 Conférence : La place des femmes dans la science aujourd'hui</li>
+                <li>🗣️ Panel : Témoignages de femmes scientifiques</li>
+                <li>🧪 Atelier : Découverte des métiers scientifiques</li>
+                <li>💬 Débat : Science, éducation, sexualité, égalité</li>
+            </ul>
+        </section>
+
+        <section id="inscription">
+            <h2>Inscription</h2>
+            <p>Inscrivez-vous pour participer à la Nuit de la Femme Scientifique.</p>
+            <form action="#" method="post">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone">
+                <label for="categorie">Catégorie :</label>
+                <select id="categorie" name="categorie">
+                    <option value="etudiant">Étudiant</option>
+                    <option value="enseignant">Enseignant</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <input type="submit" value="S'inscrire">
+            </form>
+        </section>
+
+        <section id="contacts">
+            <h2>Contacts</h2>
+            <p>📧 Email : unstim.@gmail.com</p>
+            <p>🤝 Partenaires : Écoles, universités, ONG</p>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 – La Nuit de la Femme Scientifique<br>
+        Site éducatif réalisé dans un cadre académique. Tous droits réservés.
+    </footer>
+</body>
+</html>
